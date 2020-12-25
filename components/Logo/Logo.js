@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <a className={styles.container}>
-        <Image src="/logo.svg" alt="GeoCode Routing API Logo" width={25} height={25} />
+        <Image src="/logo.png" alt="GeoCode Routing API Logo" width={25} height={25} />
       </a>
     </Link>
   );
