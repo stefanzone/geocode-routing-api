@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 12.18.3 # use Node
+before_install:
+  - npm install -g @lhci/cli
+script:
+  - npm run build # build your site
+  - npm run export # exports plain html to 'out' directory
+  - lhci autorun --rc-overrides.upload.target=temporary-public-storage # run lighthouse CI
+addons:
+  chrome: stable # make sure you have Chrome available
