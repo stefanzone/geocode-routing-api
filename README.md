@@ -1,4 +1,6 @@
-# geocode-routing-api
+# GeoCode Routing API
+
+![Node.js CI](https://github.com/stefanzone/geocode-routing-api/workflows/Node.js%20CI/badge.svg)
 
 The GeoCode Routing API is a service that calculates directions between locations. You can search for directions for different modes of transport, such as public transport, car, walking or cycling.
 
