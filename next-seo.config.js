@@ -15,7 +15,7 @@ export default {
         url: '/og-image.png',
         width: 1120,
         height: 630,
-        alt: 'Library'
+        alt: 'Banner Image'
       }
     ]
   },
