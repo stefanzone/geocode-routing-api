@@ -1,0 +1,16 @@
+.container {
+  display: inline-flex;
+
+  color: #000;
+  text-decoration: none;
+
+  padding: 7.5px;
+  margin-left: -7.5px;
+
+  transition: 150ms background-color ease;
+  cursor: pointer;
+}
+
+.container:hover {
+  background-color: rgb(238, 238, 238);
+}

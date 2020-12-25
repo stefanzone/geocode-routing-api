@@ -1,0 +1,10 @@
+.footer {
+  font-size: 15px;
+  line-height: 26.25px;
+
+  border-top-width: 1px;
+  border-top-color: gray;
+  border-top-style: solid;
+
+  margin: -7.5px 0 0 0;
+}
