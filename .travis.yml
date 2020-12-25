@@ -5,6 +5,7 @@ before_install:
   - npm install -g @lhci/cli
 script:
   - npm run build # build your site
+  - npm start
   - npm run export # exports plain html to 'out' directory
   - lhci autorun --rc-overrides.upload.target=temporary-public-storage # run lighthouse CI
 addons:
