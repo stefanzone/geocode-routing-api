@@ -1,4 +1,4 @@
-import { Language, Mode, routing, search } from '../lib/Geoapify';
+import { Language, Mode, routing, search } from '../lib/geoapify';
 
 /**
  * Sammelt Informationen zu einer gegebenen Adresse.
