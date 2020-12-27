@@ -1,3 +1,6 @@
+import { BadRequest } from 'http-json-errors';
+import is from 'is2';
+
 import { Language, Mode, routing, search } from '../lib/geoapify';
 
 /**
@@ -34,8 +37,21 @@ export const lookup = async (address) => {
  * @param {String} destination Adresse des Zielortes.
  * @param {Mode} mode Transportmittel
  * @param {Language} language Gewünschte Sprache der Routenführung.
+ *
+ * @throws {BadRequest} Parameter 'origin' ist nicht vorhanden.
+ * @throws {BadRequest} Parameter 'origin' hat keinen Wert.
+ * @throws {BadRequest} Parameter 'destination' ist nicht vorhanden.
+ * @throws {BadRequest} Parameter 'destination' hat keinen Wert.
  */
 export const route = async (origin, destination, mode = Mode.DRIVE, language = Language.DE) => {
+  // Überprüfung der Angaben zum Ursprungsort.
+  if (is.undefined(origin)) throw new BadRequest('Parameter {origin} is required.');
+  if (is.empty(origin)) throw new BadRequest('Parameter {origin} must not be empty.');
+
+  // Überprüfung der Angaben zum Zielort.
+  if (is.undefined(destination)) throw new BadRequest('Parameter {destination} is required.');
+  if (is.empty(destination)) throw new BadRequest('Parameter {destination} must not be empty.');
+
   const address = {
     origin: await lookup(origin),
     destination: await lookup(destination)
