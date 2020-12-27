@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "http-json-errors": "^1.2.8",
+    "is2": "^2.0.6",
     "next": "^10.0.0",
     "next-seo": "^4.7.3",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "swr": "^0.3.8"
+    "swr": "^0.3.8",
+    "validator": "^13.5.2"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
