@@ -1,4 +1,5 @@
 import { BadRequest } from 'http-json-errors';
+import humanizeDuration from 'humanize-duration';
 import is from 'is2';
 
 import { Language, Mode, routing, search } from '../lib/geoapify';
@@ -67,16 +68,29 @@ export const route = async (origin, destination, mode = Mode.DRIVE, language = L
   const properties = meta.features[0].properties.legs[0];
 
   return {
-    address: {
-      origin: address.origin.address.formatted,
-      destination: address.destination.address.formatted
-    },
-    route: {
-      steps: properties.steps.map((step) => step.instruction.text),
-      details: {
-        distance: properties.distance,
-        time: properties.time
+    summary: {
+      location: {
+        origin: address.origin.address.formatted,
+        destination: address.destination.address.formatted
+      },
+      duration: {
+        seconds: properties.time,
+        text: humanizeDuration(properties.time * 1000, { language: language })
+      },
+      distance: {
+        meters: properties.distance,
+        text:
+          properties.distance > 1000
+            ? properties.distance / 1000 + ' km'
+            : properties.distance + ' m'
       }
-    }
+    },
+    route: properties.steps.map(function (step) {
+      return {
+        instruction: step.instruction.text,
+        distance: step.distance > 1000 ? step.distance / 1000 + ' km' : step.distance + ' m',
+        duration: humanizeDuration(step.time * 1000, { language: language })
+      };
+    })
   };
 };
