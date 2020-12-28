@@ -19,7 +19,7 @@ export const lookup = async (address) => {
       city: properties.city,
       county: properties.county,
       state: properties.state,
-      postcode: properties.postcode,
+      postCode: properties.postcode,
       country: properties.country,
       countryCode: properties.country_code,
       formatted: properties.formatted
