@@ -9,7 +9,7 @@ function HomePage() {
   const router = useRouter();
 
   const title = 'GeoCode Routing API';
-  const description = 'Rest API for route calculation for the voice assistant Adjuvant.';
+  const description = 'The GeoCode Routing API is a service that calculates directions between locations.';
   const canonical = 'https://geocode.dev.stefan.zone' + router.pathname;
   return (
     <>
