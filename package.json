@@ -22,7 +22,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "swr": "^0.3.8",
-    "validator": "^13.5.2"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
