@@ -1,6 +1,5 @@
 # GeoCode Routing API
 
-[![Build Status](https://travis-ci.com/stefanzone/geocode-routing-api.svg?branch=main)](https://travis-ci.com/stefanzone/geocode-routing-api)
 ![Node.js CI](https://github.com/stefanzone/geocode-routing-api/workflows/Node.js%20CI/badge.svg)
 ![CodeQL](https://github.com/stefanzone/geocode-routing-api/workflows/CodeQL/badge.svg)
 
